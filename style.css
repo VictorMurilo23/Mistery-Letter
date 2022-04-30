@@ -20,3 +20,9 @@
 #carta-gerada {
   text-align: center;
 }
+
+.newspaper {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  background-color: antiquewhite;
+}
