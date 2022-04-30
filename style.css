@@ -12,3 +12,11 @@
   height: 20px;
   width: 500px;
 }
+
+#criar-carta {
+  height: 25px;
+}
+
+#carta-gerada {
+  text-align: center;
+}
