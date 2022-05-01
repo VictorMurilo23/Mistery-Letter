@@ -22,6 +22,11 @@
   margin-top: 75px;
 }
 
+#carta-gerada span {
+  margin-right: 10px;
+  word-wrap: break-word;
+}
+
 .newspaper {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
