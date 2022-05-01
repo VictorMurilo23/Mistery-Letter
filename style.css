@@ -1,6 +1,6 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -16,23 +16,26 @@
 #criar-carta {
   height: 25px;
 }
+
 #carta-contador {
   text-align: center;
   margin-top: 15px;
   font-size: 1.6em;
 }
+
 #carta-gerada {
   text-align: center;
   margin-top: 40px;
 }
 
 #carta-gerada span {
-  margin-right: 10px;
+  margin-right: 15px;
   word-wrap: break-word;
+  display: inline-block;
 }
 
 .newspaper {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Times New Roman, Times, serif;
   font-weight: 700;
   background-color: antiquewhite;
 }
@@ -46,7 +49,7 @@
 }
 
 .magazine2 {
-  background-image: url(images/pink-pattern.png);
+  background-image: url('images/pink-pattern.png');
   color: fuchsia;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
@@ -68,17 +71,17 @@
 }
 
 .rotateleft {
-  transform: matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0);
+  transform: rotate(-5deg);
 }
 
 .rotateright {
-  transform: matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0);
+  transform: rotate(5deg);
 }
 
 .skewleft {
-  transform: matrix(1, 0, 0.176327, 1, 0, 0);
+  transform: skewX(10deg);
 }
 
 .skewright {
-  transform: matrix(1, 0, -0.176327, 1, 0, 0);
+  transform: skewX(-10deg);
 }
