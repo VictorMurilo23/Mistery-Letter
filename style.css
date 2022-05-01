@@ -16,10 +16,14 @@
 #criar-carta {
   height: 25px;
 }
-
+#carta-contador {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.6em;
+}
 #carta-gerada {
   text-align: center;
-  margin-top: 75px;
+  margin-top: 40px;
 }
 
 #carta-gerada span {
