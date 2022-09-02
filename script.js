@@ -1,37 +1,39 @@
-const textoCarta = document.querySelector('#carta-texto');
-const botaoGerar = document.querySelector('#criar-carta');
-const carta = document.querySelector('#carta-gerada');
-const contador = document.querySelector('#carta-contador');
-const estilo = ['newspaper', 'magazine1', 'magazine2'];
-const tamanho = ['medium', 'big', 'reallybig'];
-const rotacao = ['rotateleft', 'rotateright'];
-const inclinacao = ['skewleft', 'skewright'];
+const letterText = document.querySelector('#carta-texto');
+const generateLetter = document.querySelector('#criar-carta');
+const letter = document.querySelector('#carta-gerada');
+const wordsCounter = document.querySelector('#carta-contador');
+const letterStyle = ['newspaper', 'magazine1', 'magazine2'];
+const letterSize = ['medium', 'big', 'reallybig'];
+const letterRotation = ['rotateleft', 'rotateright'];
+const letterInclination = ['skewleft', 'skewright'];
 
-botaoGerar.addEventListener('click', () => {
-  carta.innerText = ' ';
-  const palavras = textoCarta.value.split(' ');
-  if (palavras[0] !== '') {
-    for (let index = 0; index < palavras.length; index += 1) {
+function wordClasses(element) {
+  const word = element;
+  word.className = `${letterStyle[Math.floor(Math.random() * 3)]}`;
+  word.className += ` ${letterSize[Math.floor(Math.random() * 3)]}`;
+  word.className += ` ${letterRotation[Math.floor(Math.random() * 2)]}`;
+  word.className += ` ${letterInclination[Math.floor(Math.random() * 2)]}`;
+  return word;
+}
+
+generateLetter.addEventListener('click', () => {
+  letter.innerText = ' ';
+  const words = letterText.value.split(' ').filter((element) => element !== '');
+  if (words.length !== 0) {
+    for (let index = 0; index < words.length; index += 1) {
       const span = document.createElement('span');
-      span.className = `${estilo[Math.floor(Math.random() * 3)]}`;
-      span.className += ` ${tamanho[Math.floor(Math.random() * 3)]}`;
-      span.className += ` ${rotacao[Math.floor(Math.random() * 2)]}`;
-      span.className += ` ${inclinacao[Math.floor(Math.random() * 2)]}`;
-      span.innerText = palavras[index];
-      carta.appendChild(span);
+      wordClasses(span);
+      span.innerText = words[index];
+      letter.appendChild(span);
     }
-    contador.innerText = palavras.length;
   } else {
-    carta.innerText = 'Por favor, digite o conteúdo da carta.';
+    letter.innerText = 'Por favor, digite o conteúdo da carta.';
   }
+  wordsCounter.innerText = words.length;
 });
 
-carta.addEventListener('click', (event) => {
-  const evento = event.target;
-  if (event.target.classList.length === 4) {
-    evento.className = `${estilo[Math.floor(Math.random() * 3)]}`;
-    evento.className += ` ${tamanho[Math.floor(Math.random() * 3)]}`;
-    evento.className += ` ${rotacao[Math.floor(Math.random() * 2)]}`;
-    evento.className += ` ${inclinacao[Math.floor(Math.random() * 2)]}`;
+letter.addEventListener('click', ({ target }) => {
+  if (target.classList.length === 4) {
+    wordClasses(target);
   }
 });

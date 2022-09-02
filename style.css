@@ -1,37 +1,58 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+}
+
+.counterParagraph {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 .container {
-  text-align: center;
-  margin-top: 25px;
+  margin-top: 24px;
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.containerLetter {
+  margin-top: 12px;
+}
+
+
 #carta-texto {
-  height: 20px;
-  width: 500px;
+  height: 2.5em;
+  width: 20em;
+  text-indent: 4px;
 }
 
 #criar-carta {
-  height: 25px;
-}
-
-#carta-contador {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 1.6em;
+  height: 2.5em;
+  cursor: pointer;
 }
 
 #carta-gerada {
-  text-align: center;
-  margin-top: 40px;
+  width: 90vw;
+  overflow-wrap: break-word;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 #carta-gerada span {
-  margin-right: 15px;
+  overflow-wrap: break-word;
   word-wrap: break-word;
-  display: inline-block;
+  font-size: 0.9rem;
 }
 
 .newspaper {
@@ -50,6 +71,8 @@
 
 .magazine2 {
   background-image: url('images/pink-pattern.png');
+  background-size: cover;
+  text-shadow: 2px 2px 1px black;
   color: fuchsia;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 900;
